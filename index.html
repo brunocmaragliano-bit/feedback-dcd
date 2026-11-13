@@ -31,6 +31,8 @@
 <style>[hidden]{display:none!important}</style>
 </head>
 <body>
+<!-- o estilo da tela de senha fica aqui, no começo do body, e não no head: assim o <head> termina em ~3 KB
+     e os leitores de prévia de link (WhatsApp e outros), que leem só o começo da página, acham as etiquetas inteiras -->
 <style id="tranca-estilo">
 /* Versão hospedada. A página inteira vai cifrada (AES-GCM, chave derivada da senha por PBKDF2) num arquivo à parte,
    pedido assim que esta tela abre. Este arquivo fica leve: abre na hora e os aplicativos de mensagem leem a prévia do link sem baixar o conteúdo.
@@ -118,7 +120,7 @@ html, body { margin: 0; background: var(--noite); }
 /* decifra a página com a senha e a monta no lugar desta tela */
 (function () {
   'use strict';
-  const C = { sal: 'fQgnSuX58uubsu/aApp0sg==', iv: 'MRWy0CWiJrL36m3b', it: 600000, arq: 'conteudo.57137ef83eef.bin' };
+  const C = { sal: 'n4uNZmA5owiG2twC5HvX+g==', iv: 'TMnd+MP2KyV4I2l7', it: 600000, arq: 'conteudo.f118ef241dea.bin' };
   const raiz = document.documentElement, tela = document.getElementById('tranca-tela');
   const form = document.getElementById('tranca'), campo = document.getElementById('senha'), botao = document.getElementById('abrir'), msg = document.getElementById('msg');
   const b64 = (s) => { const b = atob(s); const u = new Uint8Array(b.length); for (let i = 0; i < b.length; i++) u[i] = b.charCodeAt(i); return u; };
