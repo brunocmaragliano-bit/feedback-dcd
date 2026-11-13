@@ -28,6 +28,9 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>[hidden]{display:none!important}</style>
+</head>
+<body>
 <style id="tranca-estilo">
 /* Versão hospedada. A página inteira vai cifrada (AES-GCM, chave derivada da senha por PBKDF2) num arquivo à parte,
    pedido assim que esta tela abre. Este arquivo fica leve: abre na hora e os aplicativos de mensagem leem a prévia do link sem baixar o conteúdo.
@@ -97,9 +100,6 @@ html, body { margin: 0; background: var(--noite); }
 .tranca.direto .tranca__p, .tranca.direto .tranca__form, .tranca.direto .tranca__msg { visibility: hidden; }
 @media (prefers-reduced-motion: reduce) { .tranca * { transition-duration: 1ms !important; animation-duration: 1ms !important; } }
 </style>
-<style>[hidden]{display:none!important}</style>
-</head>
-<body>
 <div class="tranca" id="tranca-tela" lang="pt-BR">
   <div class="tranca__in">
     <p class="rotulo">Bruno M., nov 2026</p>
